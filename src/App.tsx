@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import { Task } from './Task';
+import { Task, Importance } from './Task';
  
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [newTask, setNewTask] = useState('')
+  const [newTask, setNewTask] = useState('');
+  const [importance]
 
   function handleInputChange(event) {
     setNewTask(event.target.value);
@@ -18,7 +19,7 @@ function App() {
     }
   }
   
-  function deleteTask(index) {
+  function deleteTask(index: number) {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   }
